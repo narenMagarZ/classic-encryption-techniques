@@ -24,8 +24,17 @@ def encrypt():
 
     
 def decrypt(cipherText):
-    pass
+    plainText = ""
+    for lt in cipherText:
+        if lt != ' ':
+            index = (table[lt] - key) % 26
+            plainText += alphabets[index]
+    return plainText
 
 
 cipherText = encrypt()
 print(cipherText)
+
+
+plainText = decrypt(cipherText)
+print(plainText)
