@@ -1,5 +1,4 @@
 from itertools import count
-key = "monarchy"
 # create 5*5 matrix 
 table = [
     ['m','o','n','a','r'],
@@ -13,7 +12,6 @@ plainText = input("Enter the plain text(only alphabet): ")
 def createDigram():
     digram = []
     i = 0
-    c = 0
     for j in count(): # network # ballon #nnnnn
         if i+1 == len(plainText):
             digram.append(f'{plainText[i]}x')
@@ -23,18 +21,15 @@ def createDigram():
         if plainText[i] == plainText[i+1]:
             digram.append(f'{plainText[i]}x')
             i=i+1
-            c = c + 1
             pass
         else:
             digram.append(plainText[i:i+2])
             i = i+2
-            c = c + 2
     return digram
 
 
 
 digram = createDigram()
-print(digram)
 def encrypt():
     cipher = ''
     for i in digram:
